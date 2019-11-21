@@ -8,4 +8,4 @@ Level: Intermediate -- Visualise Eurovision winners using Kibana dashboards -- F
 
 ### View and download the book
 The book can be found at:
-- [Fantastic Elastic Book 2](https://leanpub.com/FantasticElastic2/)
+- [Fantastic Elastic 2](https://leanpub.com/FantasticElastic2/)
