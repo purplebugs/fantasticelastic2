@@ -1,0 +1,43 @@
+## Commands to practise using the Dev Tools console
+
+## Show all indices
+
+GET _cat/indices?v
+
+
+## Create an index with one document in one command
+
+PUT my_first_index/_doc/1
+{
+  "name": "Rose the raccoon",
+  "favourite_colour" : "pink"
+}
+
+
+## View documents in the index
+
+GET my_first_index/_search
+
+
+## Add a second document to the index
+
+PUT my_first_index/_doc/2
+{
+  "name": "Edgar the werewolf",
+  "favourite_colour" : "black"
+}
+
+
+## View the documents in the index
+
+GET my_first_index/_search
+
+
+## Delete the document with id=1
+
+DELETE my_first_index/_doc/1
+
+
+## Delete the index
+
+DELETE my_first_index
