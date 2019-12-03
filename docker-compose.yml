@@ -1,3 +1,8 @@
+#### USAGE: 
+#### To start run: docker-compose up
+#### To stop run: docker-compose down
+#### To delete the data volumes when stopping run: docker-compose down -v
+
 # elasticsearch, kibana TODO, node.js app TODO
 
 #elasticsearch
