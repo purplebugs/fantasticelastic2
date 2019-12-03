@@ -3,12 +3,22 @@
 #### To stop run: docker-compose down
 #### To delete the data volumes when stopping run: docker-compose down -v
 
-# elasticsearch, kibana TODO, node.js app TODO
+# elasticsearch, kibana, node.js app TODO
 
-#elasticsearch
-version: '2.2'
+version: '3'
+
+volumes:
+  data01:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
+
 services:
-  es01:
+
+  #elasticsearch
+  elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.0
     container_name: es01
     environment:
@@ -27,14 +37,17 @@ services:
     networks:
       - elastic
 
-volumes:
-  data01:
-    driver: local
+  #kibana
+  kibana01: 
+    image: docker.elastic.co/kibana/kibana:7.5.0
+    environment:
+      ELASTICSEARCH_HOSTS: http://es01:9200
+    ports:
+      - 5601:5601
+    networks:
+      - elastic
 
-networks:
-  elastic:
-    driver: bridge
-    
+# TODO my node.js app
 # To test elasticesearch is running: curl -X GET "localhost:9200/_cat/nodes?v&pretty"
 #
 # Expected response:
